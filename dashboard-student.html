@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html" class="active">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html" class="active">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Welcome back, John!</h1>
+                <p>Here's what's happening with your courses</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Active Courses</h3>
+                    <p class="stat-value">4</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed Courses</h3>
+                    <p class="stat-value">12</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Assignments</h3>
+                    <p class="stat-value">3</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Overall GPA</h3>
+                    <p class="stat-value">3.8</p>
+                </div>
+            </div>
+
+            <div class="performance-overview">
+                <h2>📈 Performance Overview</h2>
+                <div class="performance-chart">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="ai-insights">
+                <h2>🤖 AI Insights & Recommendations</h2>
+                <div class="insights-grid">
+                    <div class="insight-card success">
+                        <h3>Strong Performance</h3>
+                        <p>You're excelling in Data Science! Keep up the great work.</p>
+                    </div>
+                    <div class="insight-card warning">
+                        <h3>Attention Needed</h3>
+                        <p>Your attendance in Web Development has dropped to 75%. Consider catching up on missed classes.</p>
+                    </div>
+                    <div class="insight-card info">
+                        <h3>Study Tip</h3>
+                        <p>Based on your learning pattern, study sessions between 2-4 PM yield your best results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upcoming-section">
+                <h2>📅 Upcoming Deadlines</h2>
+                <div class="upcoming-list">
+                    <div class="upcoming-item">
+                        <div class="upcoming-date">Aug 18</div>
+                        <div class="upcoming-details">
+                            <h4>Python Project Submission</h4>
+                            <p>Introduction to Python Programming</p>
+                        </div>
+                    </div>
+                    <div class="upcoming-item">
+                        <div class="upcoming-date">Aug 20</div>
+                        <div class="upcoming-details">
+                            <h4>Data Analysis Quiz</h4>
+                            <p>Data Science Fundamentals</p>
+                        </div>
+                    </div>
+                    <div class="upcoming-item">
+                        <div class="upcoming-date">Aug 22</div>
+                        <div class="upcoming-details">
+                            <h4>Final Exam</h4>
+                            <p>Web Development Bootcamp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-summary">
+                <h2>📊 Course Progress</h2>
+                <div class="progress-list">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="course-name">Introduction to Python</span>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="course-name">Data Science Fundamentals</span>
+                            <span class="progress-percent">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="course-name">Web Development</span>
+                            <span class="progress-percent">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
