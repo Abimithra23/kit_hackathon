@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon Admin</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-admin.html" class="active">Dashboard</a></li>
+                <li><a href="admin-students.html">Students</a></li>
+                <li><a href="admin-teachers.html">Teachers</a></li>
+                <li><a href="admin-courses.html">Courses</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">Admin ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#">Settings</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Admin Panel</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-admin.html" class="active">📊 Dashboard</a></li>
+                <li><a href="admin-students.html">👥 Manage Students</a></li>
+                <li><a href="admin-teachers.html">👨‍🏫 Manage Teachers</a></li>
+                <li><a href="admin-courses.html">📚 Manage Courses</a></li>
+                <li><a href="admin-assignments.html">📝 Manage Assignments</a></li>
+                <li><a href="admin-exams.html">🎓 Manage Exams</a></li>
+                <li><a href="admin-reports.html">📈 Reports & Analytics</a></li>
+                <li><a href="admin-ai-insights.html">🤖 AI Insights</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <p>System Overview & Analytics</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p class="stat-value">1,245</p>
+                    <span class="stat-change positive">+12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Teachers</h3>
+                    <p class="stat-value">78</p>
+                    <span class="stat-change positive">+5 new</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Courses</h3>
+                    <p class="stat-value">156</p>
+                    <span class="stat-change">+8 this semester</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Attendance</h3>
+                    <p class="stat-value">87%</p>
+                    <span class="stat-change negative">-2% this week</span>
+                </div>
+            </div>
+
+            <div class="ai-monitoring">
+                <h2>🤖 AI Monitoring & Alerts</h2>
+                <div class="alerts-grid">
+                    <div class="alert-card critical">
+                        <h3>At-Risk Students Detected</h3>
+                        <p>23 students identified with declining performance</p>
+                        <a href="admin-ai-insights.html">View Details</a>
+                    </div>
+                    <div class="alert-card warning">
+                        <h3>Low Attendance Alert</h3>
+                        <p>Course CS-301 has 65% attendance rate</p>
+                        <a href="#">Take Action</a>
+                    </div>
+                    <div class="alert-card info">
+                        <h3>Performance Insights</h3>
+                        <p>Top performing class: Data Science 101</p>
+                        <a href="admin-reports.html">View Report</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h2>Student Enrollment Trends</h2>
+                    <canvas id="enrollmentChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Course Performance Comparison</h2>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <span class="activity-icon">👤</span>
+                        <div class="activity-details">
+                            <p><strong>New student registered</strong></p>
+                            <p class="activity-meta">Jane Smith - 5 minutes ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">📚</span>
+                        <div class="activity-details">
+                            <p><strong>Course updated</strong></p>
+                            <p class="activity-meta">Advanced JavaScript - 1 hour ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">📝</span>
+                        <div class="activity-details">
+                            <p><strong>Assignment submitted</strong></p>
+                            <p class="activity-meta">Python Project - 2 hours ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="system-reports">
+                <h2>📈 Performance Reports & Summary</h2>
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Academic Performance Summary</h3>
+                        <p>Overall GPA: 3.5 | Pass Rate: 92%</p>
+                        <button class="btn-secondary" onclick="downloadReport('academic')">Download Report</button>
+                    </div>
+                    <div class="report-card">
+                        <h3>Weak Areas Identified</h3>
+                        <p>Math courses show lower performance</p>
+                        <button class="btn-secondary" onclick="viewWeakAreas()">View Analysis</button>
+                    </div>
+                    <div class="report-card">
+                        <h3>AI Recommendations</h3>
+                        <p>Suggested interventions for 45 students</p>
+                        <button class="btn-secondary" onclick="viewRecommendations()">View Recommendations</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
