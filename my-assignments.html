@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Assignments - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html" class="active">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html" class="active">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>My Assignments</h1>
+                <p>Track and submit your assignments</p>
+            </div>
+
+            <div class="assignment-tabs">
+                <button class="tab-btn active" onclick="filterAssignments('pending')">Pending (3)</button>
+                <button class="tab-btn" onclick="filterAssignments('submitted')">Submitted (8)</button>
+                <button class="tab-btn" onclick="filterAssignments('graded')">Graded (12)</button>
+                <button class="tab-btn" onclick="filterAssignments('all')">All</button>
+            </div>
+
+            <div class="assignments-list">
+                <div class="assignment-card" data-status="pending">
+                    <div class="assignment-header">
+                        <div>
+                            <h3>Python Final Project</h3>
+                            <p class="course-name">Introduction to Python Programming</p>
+                        </div>
+                        <span class="badge pending">Pending</span>
+                    </div>
+                    <div class="assignment-details">
+                        <div class="detail-item">
+                            <span class="icon">📅</span>
+                            <div>
+                                <strong>Due Date:</strong>
+                                <span>August 18, 2026 at 11:59 PM</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">⚠️</span>
+                            <div>
+                                <strong>Status:</strong>
+                                <span class="urgent">Due in 2 days</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">📊</span>
+                            <div>
+                                <strong>Points:</strong>
+                                <span>100</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="assignment-description">
+                        Create a complete Python application that demonstrates your understanding of OOP, 
+                        file handling, and API integration. Include documentation and test cases.
+                    </p>
+                    <div class="assignment-actions">
+                        <a href="#" class="btn-primary" onclick="showNotification('Assignment submission page will open', 'info'); return false;">Submit Assignment</a>
+                        <a href="course-details.html" class="btn-secondary">View Instructions</a>
+                    </div>
+                </div>
+
+                <div class="assignment-card" data-status="pending">
+                    <div class="assignment-header">
+                        <div>
+                            <h3>Data Analysis Quiz</h3>
+                            <p class="course-name">Data Science Fundamentals</p>
+                        </div>
+                        <span class="badge pending">Pending</span>
+                    </div>
+                    <div class="assignment-details">
+                        <div class="detail-item">
+                            <span class="icon">📅</span>
+                            <div>
+                                <strong>Due Date:</strong>
+                                <span>August 20, 2026 at 11:59 PM</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">⏰</span>
+                            <div>
+                                <strong>Duration:</strong>
+                                <span>60 minutes</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">📊</span>
+                            <div>
+                                <strong>Points:</strong>
+                                <span>50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="assignment-description">
+                        Online quiz covering data cleaning, exploratory analysis, and visualization techniques.
+                    </p>
+                    <div class="assignment-actions">
+                        <a href="#" class="btn-primary" onclick="showNotification('Quiz will start in new window', 'info'); return false;">Start Quiz</a>
+                        <a href="course-details.html" class="btn-secondary">View Topics</a>
+                    </div>
+                </div>
+
+                <div class="assignment-card" data-status="submitted">
+                    <div class="assignment-header">
+                        <div>
+                            <h3>JavaScript Functions Exercise</h3>
+                            <p class="course-name">Web Development Bootcamp</p>
+                        </div>
+                        <span class="badge submitted">Submitted</span>
+                    </div>
+                    <div class="assignment-details">
+                        <div class="detail-item">
+                            <span class="icon">📅</span>
+                            <div>
+                                <strong>Submitted:</strong>
+                                <span>August 10, 2026</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">⏱️</span>
+                            <div>
+                                <strong>Submitted:</strong>
+                                <span>2 days early</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">📊</span>
+                            <div>
+                                <strong>Points:</strong>
+                                <span>75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="assignment-description">
+                        Implement various JavaScript functions including callbacks, promises, and async/await.
+                    </p>
+                    <div class="assignment-actions">
+                        <a href="grades.html" class="btn-secondary">View Submission</a>
+                        <span class="status-text">Awaiting grading</span>
+                    </div>
+                </div>
+
+                <div class="assignment-card" data-status="graded">
+                    <div class="assignment-header">
+                        <div>
+                            <h3>Database Design Project</h3>
+                            <p class="course-name">Introduction to Python Programming</p>
+                        </div>
+                        <span class="badge graded">Graded</span>
+                    </div>
+                    <div class="assignment-details">
+                        <div class="detail-item">
+                            <span class="icon">📅</span>
+                            <div>
+                                <strong>Submitted:</strong>
+                                <span>July 28, 2026</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">🎯</span>
+                            <div>
+                                <strong>Score:</strong>
+                                <span class="score-good">92/100</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">⭐</span>
+                            <div>
+                                <strong>Grade:</strong>
+                                <span class="grade-a">A</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feedback-box">
+                        <strong>Instructor Feedback:</strong>
+                        <p>Excellent work! Your database schema is well-designed and normalized. 
+                        Good use of indexes. Minor improvement: Add more comprehensive error handling.</p>
+                    </div>
+                    <div class="assignment-actions">
+                        <a href="grades.html" class="btn-secondary">View Details</a>
+                        <a href="grades.html" class="btn-secondary">View Rubric</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-suggestions">
+                <h2>🤖 AI Study Suggestions</h2>
+                <div class="suggestion-card">
+                    <p><strong>Priority Alert:</strong> You have 3 assignments due this week. 
+                    Based on your study pattern, we recommend dedicating 2 hours daily to complete them on time.</p>
+                </div>
+                <div class="suggestion-card">
+                    <p><strong>Tip:</strong> Your Python project score could be improved by reviewing 
+                    the OOP concepts covered in Week 8. Watch the recorded lecture again.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterAssignments(filter) {
+            const cards = document.querySelectorAll('.assignment-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = card.dataset.status === filter ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
