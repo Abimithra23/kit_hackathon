@@ -1,0 +1,342 @@
+═══════════════════════════════════════════════════════════════
+    K+ HACKATHON EDUCATIONAL PLATFORM - COMPLETE SITEMAP
+═══════════════════════════════════════════════════════════════
+
+📂 PROJECT STRUCTURE
+--------------------
+abi/
+├── 📄 index.html                    ← START HERE (Home Page)
+├── 📄 courses.html                  (Course Catalog)
+├── 📄 course-details.html           (Individual Course Info)
+├── 📄 contact.html                  (Contact Form & FAQ)
+├── 📄 login.html                    (Login/Register)
+│
+├── 👨‍🎓 STUDENT PAGES
+│   ├── 📄 dashboard-student.html    (Student Dashboard)
+│   ├── 📄 my-courses.html           (My Enrolled Courses)
+│   ├── 📄 my-assignments.html       (Assignments Hub)
+│   ├── 📄 my-progress.html          (Progress Tracking)
+│   ├── 📄 attendance.html           (Attendance Records)
+│   ├── 📄 grades.html               (Grades & GPA)
+│   ├── 📄 recommendations.html      (AI Recommendations)
+│   └── 📄 profile.html              (Profile Settings)
+│
+├── 👨‍💼 ADMIN PAGES
+│   └── 📄 dashboard-admin.html      (Admin Dashboard)
+│
+├── 📁 css/
+│   └── 📄 styles.css                (All Styling)
+│
+├── 📁 js/
+│   ├── 📄 main.js                   (Core Functions)
+│   ├── 📄 auth.js                   (Login/Register)
+│   ├── 📄 dashboard.js              (Dashboard Logic)
+│   ├── 📄 admin-dashboard.js        (Admin Logic)
+│   ├── 📄 courses.js                (Course Search/Filter)
+│   ├── 📄 contact.js                (Contact Form)
+│   └── 📄 course-details.js         (Course Details)
+│
+└── 📄 README.md                     (Documentation)
+
+
+═══════════════════════════════════════════════════════════════
+    NAVIGATION FLOW
+═══════════════════════════════════════════════════════════════
+
+🏠 PUBLIC FLOW (No Login Required)
+───────────────────────────────────
+index.html
+    │
+    ├─→ courses.html
+    │       └─→ course-details.html
+    │               └─→ login.html (to enroll)
+    │
+    ├─→ contact.html
+    │
+    └─→ login.html
+            ├─→ [Student Login] → dashboard-student.html
+            └─→ [Teacher Login] → dashboard-teacher.html
+
+
+👨‍🎓 STUDENT FLOW (After Login)
+───────────────────────────────
+dashboard-student.html
+    │
+    ├─→ my-courses.html
+    │       └─→ course-details.html
+    │
+    ├─→ my-assignments.html
+    │       ├─→ Submit Assignment
+    │       └─→ View Feedback
+    │
+    ├─→ attendance.html
+    │       └─→ View Calendar & Stats
+    │
+    ├─→ grades.html
+    │       └─→ View GPA & Analysis
+    │
+    ├─→ recommendations.html
+    │       ├─→ AI Study Tips
+    │       ├─→ Weak Subject Analysis
+    │       └─→ Recommended Courses
+    │
+    ├─→ my-progress.html
+    │       ├─→ Track Completion
+    │       └─→ View Achievements
+    │
+    └─→ profile.html
+            ├─→ Personal Info
+            ├─→ Academic Info
+            ├─→ Security Settings
+            └─→ Preferences
+
+
+👨‍💼 ADMIN FLOW
+───────────────────
+dashboard-admin.html
+    │
+    ├─→ Manage Students
+    ├─→ Manage Teachers
+    ├─→ Manage Courses
+    ├─→ View Reports
+    └─→ AI Monitoring
+
+
+═══════════════════════════════════════════════════════════════
+    PAGE-BY-PAGE FEATURES
+═══════════════════════════════════════════════════════════════
+
+📄 index.html (HOME PAGE)
+-------------------------
+✓ Hero banner with CTA
+✓ Latest announcements (3 cards)
+✓ Featured courses grid
+✓ Top teachers showcase
+✓ AI study tips
+
+
+📄 courses.html (COURSE CATALOG)
+---------------------------------
+✓ Search functionality
+✓ Filter by category, level, rating
+✓ Sort by popular, rating, newest, title
+✓ Course cards with details
+✓ Top-rated courses sidebar
+
+
+📄 course-details.html (COURSE INFO)
+------------------------------------
+✓ Course header with stats
+✓ Tabs: Overview, Syllabus, Instructor, Schedule, Reviews
+✓ Enrollment card with pricing
+✓ Expandable syllabus modules
+✓ Student reviews with ratings
+
+
+📄 contact.html (CONTACT PAGE)
+-------------------------------
+✓ Contact information display
+✓ Contact form with validation
+✓ FAQ section (expandable items)
+✓ Multiple contact methods
+
+
+📄 login.html (LOGIN/REGISTER)
+-------------------------------
+✓ Toggle between Login/Register
+✓ Role selection (Student/Teacher)
+✓ Social login options
+✓ Form validation
+✓ Benefits showcase
+
+
+📄 dashboard-student.html (STUDENT DASHBOARD)
+---------------------------------------------
+✓ Welcome message
+✓ Statistics cards (4 metrics)
+✓ Performance overview chart
+✓ AI insights & recommendations
+✓ Upcoming deadlines
+✓ Course progress bars
+
+
+📄 my-courses.html (MY COURSES)
+-------------------------------
+✓ Filter: Active/Completed/All
+✓ Progress tracking per course
+✓ Course statistics
+✓ Continue learning button
+✓ Certificate download (completed)
+
+
+📄 my-assignments.html (ASSIGNMENTS)
+------------------------------------
+✓ Tabs: Pending/Submitted/Graded/All
+✓ Assignment cards with details
+✓ Due date tracking
+✓ Submit assignment functionality
+✓ View instructor feedback
+✓ AI study suggestions
+
+
+📄 attendance.html (ATTENDANCE)
+-------------------------------
+✓ Overall attendance percentage
+✓ Statistics: Attended, Excused, Unexcused
+✓ Attendance by course
+✓ Interactive calendar view
+✓ AI attendance insights
+
+
+📄 grades.html (GRADES & GPA)
+-----------------------------
+✓ Overall GPA display
+✓ Current semester GPA
+✓ Credits completed
+✓ Current courses grades table
+✓ Completed courses history
+✓ Grade analysis
+✓ AI grade insights
+
+
+📄 recommendations.html (AI RECOMMENDATIONS)
+-------------------------------------------
+✓ AI learning score
+✓ Priority-based recommendations
+✓ Study schedule optimization
+✓ Weak subject identification
+✓ Recommended courses
+✓ Performance insights
+✓ Learning style analysis
+
+
+📄 my-progress.html (PROGRESS TRACKING)
+---------------------------------------
+✓ Overall statistics
+✓ Progress chart
+✓ Course-by-course breakdown
+✓ Achievements & badges system
+✓ Learning statistics
+
+
+📄 profile.html (PROFILE SETTINGS)
+----------------------------------
+✓ Profile picture upload
+✓ Tabs: Personal/Academic/Security/Preferences
+✓ Personal information form
+✓ Academic information display
+✓ Password change
+✓ Two-factor authentication
+✓ Notification preferences
+
+
+📄 dashboard-admin.html (ADMIN DASHBOARD)
+-----------------------------------------
+✓ System statistics
+✓ AI monitoring & alerts
+✓ Enrollment trends chart
+✓ Performance comparison chart
+✓ Recent activity log
+✓ Performance reports
+
+
+═══════════════════════════════════════════════════════════════
+    KEY FEATURES SUMMARY
+═══════════════════════════════════════════════════════════════
+
+🎨 DESIGN FEATURES
+------------------
+✓ Modern purple gradient theme (#667eea to #764ba2)
+✓ Fully responsive design (mobile, tablet, desktop)
+✓ Smooth animations and transitions
+✓ Consistent navigation across all pages
+✓ Clean card-based layouts
+✓ Professional typography
+
+🔧 FUNCTIONAL FEATURES
+----------------------
+✓ Course search and filtering
+✓ Form validation (all forms)
+✓ Tab navigation
+✓ Dropdown menus
+✓ Expandable accordions
+✓ Progress bars
+✓ Interactive calendars
+✓ Notification system
+✓ Role-based access control
+
+🤖 AI-POWERED FEATURES
+----------------------
+✓ Performance analysis
+✓ At-risk student detection
+✓ Weak subject identification
+✓ Personalized recommendations
+✓ Study pattern insights
+✓ Learning style analysis
+✓ Attendance monitoring
+✓ Grade predictions
+
+📊 DATA VISUALIZATION
+---------------------
+✓ Progress charts (Chart.js)
+✓ Performance graphs
+✓ Attendance calendar
+✓ Statistics cards
+✓ GPA displays
+✓ Completion percentages
+
+
+═══════════════════════════════════════════════════════════════
+    QUICK ACCESS GUIDE
+═══════════════════════════════════════════════════════════════
+
+To Access:                          Open File:
+----------                          ----------
+Home Page                      →    index.html
+Browse All Courses             →    courses.html
+Contact Us                     →    contact.html
+Login/Register                 →    login.html
+
+After Login as Student:
+Student Dashboard              →    dashboard-student.html
+My Courses                     →    my-courses.html
+Assignments                    →    my-assignments.html
+Attendance                     →    attendance.html
+Grades                         →    grades.html
+AI Recommendations             →    recommendations.html
+Progress                       →    my-progress.html
+Profile                        →    profile.html
+
+Admin Access:
+Admin Dashboard                →    dashboard-admin.html
+
+
+═══════════════════════════════════════════════════════════════
+    TECHNOLOGY STACK
+═══════════════════════════════════════════════════════════════
+
+Frontend:
+  • HTML5 (Semantic markup)
+  • CSS3 (Flexbox, Grid, Animations)
+  • JavaScript ES6+ (Vanilla JS)
+  
+Libraries (CDN):
+  • Chart.js (Data visualization)
+  
+Storage:
+  • LocalStorage (Session management)
+
+Browser Support:
+  • Chrome (latest)
+  • Firefox (latest)
+  • Edge (latest)
+  • Safari (latest)
+
+
+═══════════════════════════════════════════════════════════════
+
+         🎉 All Pages Are Ready to Use! 🎉
+
+    Start by opening: index.html in your browser
+
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html" class="active">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html" class="active">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>My Profile</h1>
+                <p>Manage your account settings and preferences</p>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-picture">
+                        <img src="https://via.placeholder.com/200" alt="Profile Picture">
+                <button class="btn-secondary">Change Photo</button>
+                    </div>
+                    <div class="profile-quick-info">
+                        <h3>John Doe</h3>
+                        <p>Student ID: STU-2026-1234</p>
+                        <p>Member since: Jan 2026</p>
+                        <span class="badge active">Active Student</span>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-tabs">
+                        <button class="tab-btn active" onclick="showProfileTab('personal')">Personal Info</button>
+                        <button class="tab-btn" onclick="showProfileTab('academic')">Academic Info</button>
+                        <button class="tab-btn" onclick="showProfileTab('security')">Security</button>
+                        <button class="tab-btn" onclick="showProfileTab('preferences')">Preferences</button>
+                    </div>
+
+                    <div id="personal" class="profile-tab-content active">
+                        <h2>Personal Information</h2>
+                        <form class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" value="Doe">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" value="john.doe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" value="+1 (555) 123-4567">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" value="2000-05-15">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea rows="3">123 Main Street, Apt 4B
+Tech City, TC 12345
+United States</textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div id="academic" class="profile-tab-content">
+                        <h2>Academic Information</h2>
+                        <div class="academic-info">
+                            <div class="info-row">
+                                <span class="label">Student ID:</span>
+                                <span class="value">STU-2026-1234</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Program:</span>
+                                <span class="value">Computer Science</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Year:</span>
+                                <span class="value">Sophomore (2nd Year)</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Expected Graduation:</span>
+                                <span class="value">May 2028</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Overall GPA:</span>
+                                <span class="value">3.8 / 4.0</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Credits Completed:</span>
+                                <span class="value">48 / 120</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Academic Advisor:</span>
+                                <span class="value">Prof. Jane Smith</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="security" class="profile-tab-content">
+                        <h2>Security Settings</h2>
+                        <form class="profile-form">
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input type="password" placeholder="Enter current password">
+                            </div>
+
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input type="password" placeholder="Enter new password">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Confirm New Password</label>
+                                <input type="password" placeholder="Confirm new password">
+                            </div>
+
+                            <button type="submit" class="btn-primary">Update Password</button>
+                        </form>
+
+                        <div class="two-factor-section">
+                            <h3>Two-Factor Authentication</h3>
+                            <p>Add an extra layer of security to your account</p>
+                            <button class="btn-secondary">Enable 2FA</button>
+                        </div>
+
+                        <div class="sessions-section">
+                            <h3>Active Sessions</h3>
+                            <div class="session-item">
+                                <div>
+                                    <strong>Windows PC - Chrome</strong>
+                                    <p>Current session • Last active: Now</p>
+                                </div>
+                                <span class="badge active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="preferences" class="profile-tab-content">
+                        <h2>Preferences</h2>
+                        <form class="profile-form">
+                            <div class="form-group">
+                                <label>Email Notifications</label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    Assignment reminders
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    Grade updates
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    Course announcements
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    Weekly progress reports
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Language</label>
+                                <select>
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Time Zone</label>
+                                <select>
+                                    <option>Eastern Time (ET)</option>
+                                    <option>Central Time (CT)</option>
+                                    <option>Mountain Time (MT)</option>
+                                    <option>Pacific Time (PT)</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Save Preferences</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function showProfileTab(tabName) {
+            const tabs = document.querySelectorAll('.profile-tab-content');
+            const buttons = document.querySelectorAll('.profile-tabs .tab-btn');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

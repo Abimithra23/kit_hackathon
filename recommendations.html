@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recommendations - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html" class="active">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>🤖 AI-Powered Recommendations</h1>
+                <p>Personalized insights to improve your learning experience</p>
+            </div>
+
+            <div class="ai-score-card">
+                <h2>Your AI Learning Score</h2>
+                <div class="score-display">
+                    <div class="circular-score">
+                        <span class="score-number">8.5</span>
+                        <span class="score-label">/10</span>
+                    </div>
+                    <div class="score-details">
+                        <p>You're performing <strong>excellent</strong>! Keep up the great work.</p>
+                        <p class="score-trend positive">↑ Improved by 0.8 points this month</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations-section">
+                <h2>📚 Study Recommendations</h2>
+                <div class="recommendation-card priority-high">
+                    <div class="rec-header">
+                        <span class="priority-badge high">High Priority</span>
+                        <span class="rec-icon">📖</span>
+                    </div>
+                    <h3>Review Data Science Concepts</h3>
+                    <p>Your quiz performance in Data Science has dropped by 12%. We recommend:</p>
+                    <ul>
+                        <li>Review Week 5-6 lecture materials on statistical analysis</li>
+                        <li>Complete the practice problems in Chapter 7</li>
+                        <li>Attend the study group session on Wednesday at 3 PM</li>
+                    </ul>
+                    <button class="btn-primary" onclick="showNotification('Recommendation applied to your dashboard!', 'success')">Apply Recommendation</button>
+                </div>
+
+                <div class="recommendation-card priority-medium">
+                    <div class="rec-header">
+                        <span class="priority-badge medium">Medium Priority</span>
+                        <span class="rec-icon">⏰</span>
+                    </div>
+                    <h3>Optimize Study Schedule</h3>
+                    <p>Based on your learning patterns, you're most productive between 2-4 PM.</p>
+                    <ul>
+                        <li>Schedule difficult subjects during your peak hours</li>
+                        <li>Take 10-minute breaks every 45 minutes</li>
+                        <li>Your average session length: 2.5 hours (optimal)</li>
+                    </ul>
+                    <a href="my-progress.html" class="btn-secondary">View Optimized Schedule</a>
+                </div>
+
+                <div class="recommendation-card priority-low">
+                    <div class="rec-header">
+                        <span class="priority-badge low">Low Priority</span>
+                        <span class="rec-icon">🎯</span>
+                    </div>
+                    <h3>Improve Assignment Submissions</h3>
+                    <p>Consider submitting assignments earlier to allow time for revisions.</p>
+                    <ul>
+                        <li>Average submission time: 2 hours before deadline</li>
+                        <li>Recommended: Submit 1-2 days early</li>
+                        <li>Students who submit early score 8% higher on average</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="weak-subjects-section">
+                <h2>📉 Weak Subject Identification</h2>
+                <div class="weak-subjects-grid">
+                    <div class="weak-subject-card">
+                        <h3>Statistical Analysis</h3>
+                        <div class="subject-score">
+                            <span class="score">68%</span>
+                            <span class="trend negative">-12% from last assessment</span>
+                        </div>
+                        <p><strong>AI Analysis:</strong> You're struggling with hypothesis testing and p-values. 
+                        Recommend watching supplementary videos and practicing with real datasets.</p>
+                        <div class="action-buttons">
+                            <a href="course-details.html" class="btn-primary">View Resources</a>
+                            <a href="contact.html" class="btn-secondary">Request Tutoring</a>
+                        </div>
+                    </div>
+
+                    <div class="weak-subject-card">
+                        <h3>Algorithm Complexity</h3>
+                        <div class="subject-score">
+                            <span class="score">72%</span>
+                            <span class="trend negative">-5% from last assessment</span>
+                        </div>
+                        <p><strong>AI Analysis:</strong> Time complexity analysis needs improvement. 
+                        Focus on Big O notation and practice analyzing different algorithms.</p>
+                        <div class="action-buttons">
+                            <a href="course-details.html" class="btn-primary">View Resources</a>
+                            <a href="my-progress.html" class="btn-secondary">Practice Problems</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-recommendations">
+                <h2>💡 Recommended Courses for You</h2>
+                <div class="recommended-courses-list">
+                    <div class="recommended-course">
+                        <img src="https://via.placeholder.com/150x100" alt="Course">
+                        <div class="course-info">
+                            <h3>Advanced Python: Data Structures</h3>
+                            <p>Based on your strong Python performance</p>
+                            <span class="match-score">95% Match</span>
+                        </div>
+                        <a href="courses.html" class="btn-primary">View Course</a>
+                    </div>
+
+                    <div class="recommended-course">
+                        <img src="https://via.placeholder.com/150x100" alt="Course">
+                        <div class="course-info">
+                            <h3>Statistics for Data Science</h3>
+                            <p>Strengthen your data science fundamentals</p>
+                            <span class="match-score">88% Match</span>
+                        </div>
+                        <a href="courses.html" class="btn-primary">View Course</a>
+                    </div>
+
+                    <div class="recommended-course">
+                        <img src="https://via.placeholder.com/150x100" alt="Course">
+                        <div class="course-info">
+                            <h3>Full Stack JavaScript</h3>
+                            <p>Next step after web development bootcamp</p>
+                            <span class="match-score">92% Match</span>
+                        </div>
+                        <a href="courses.html" class="btn-primary">View Course</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="performance-insights">
+                <h2>📊 Performance Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-box">
+                        <h3>Learning Style</h3>
+                        <p><strong>Visual Learner (75%)</strong></p>
+                        <p>You respond best to video content and diagrams. We've adjusted your recommendations accordingly.</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Study Habits</h3>
+                        <p><strong>Consistent & Disciplined</strong></p>
+                        <p>You maintain regular study sessions averaging 12 hours/week. Great consistency!</p>
+                    </div>
+                    <div class="insight-box">
+                        <h3>Improvement Areas</h3>
+                        <p><strong>Theoretical Concepts</strong></p>
+                        <p>You excel at practical coding but need more focus on theoretical foundations.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function acceptRecommendation(type) {
+            showNotification('Recommendation applied! Resources added to your dashboard.', 'success');
+        }
+
+        function viewSchedule() {
+            showNotification('Loading your optimized study schedule...', 'info');
+        }
+    </script>
+</body>
+</html>

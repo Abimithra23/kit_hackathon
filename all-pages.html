@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Pages - K+ Hackathon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .page-card {
+            background: linear-gradient(135deg, #f4f7f9 0%, #fff 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        .page-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .page-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .page-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        .badge.public {
+            background: #d4edda;
+            color: #155724;
+        }
+        .badge.auth {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .badge.admin {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .start-button {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            transition: all 0.3s;
+        }
+        .start-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .info-box {
+            background: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            margin: 2rem 0;
+        }
+        .info-box h3 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 K+ Hackathon Educational Platform</h1>
+        <p class="subtitle">Complete Website - All Pages Ready!</p>
+
+        <a href="index.html" class="start-button">🚀 START HERE - Open Home Page</a>
+
+        <div class="info-box">
+            <h3>📌 How to Use This Page</h3>
+            <p>This page lists ALL available pages in the website. Click on any card below to open that page directly. 
+            Start with the HOME PAGE above, or explore specific sections below.</p>
+        </div>
+
+        <div class="section">
+            <h2>🌐 Public Pages (No Login Required)</h2>
+            <div class="pages-grid">
+                <a href="index.html" class="page-card">
+                    <span class="page-icon">🏠</span>
+                    <div class="page-title">Home Page</div>
+                    <div class="page-desc">Welcome page with hero, announcements, featured courses, top teachers, and study tips</div>
+                    <span class="badge public">Public</span>
+                </a>
+
+                <a href="courses.html" class="page-card">
+                    <span class="page-icon">📚</span>
+                    <div class="page-title">Courses Catalog</div>
+                    <div class="page-desc">Browse, search, and filter all available courses. Sort by popularity or rating</div>
+                    <span class="badge public">Public</span>
+                </a>
+
+                <a href="course-details.html" class="page-card">
+                    <span class="page-icon">📖</span>
+                    <div class="page-title">Course Details</div>
+                    <div class="page-desc">View complete course information, syllabus, instructor info, schedule, and reviews</div>
+                    <span class="badge public">Public</span>
+                </a>
+
+                <a href="contact.html" class="page-card">
+                    <span class="page-icon">📧</span>
+                    <div class="page-title">Contact Us</div>
+                    <div class="page-desc">Contact form, FAQ section, and support information</div>
+                    <span class="badge public">Public</span>
+                </a>
+
+                <a href="login.html" class="page-card">
+                    <span class="page-icon">🔐</span>
+                    <div class="page-title">Login / Register</div>
+                    <div class="page-desc">User authentication with role selection (Student/Teacher)</div>
+                    <span class="badge public">Public</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>👨‍🎓 Student Dashboard Pages (Login Required)</h2>
+            <div class="pages-grid">
+                <a href="dashboard-student.html" class="page-card">
+                    <span class="page-icon">📊</span>
+                    <div class="page-title">Student Dashboard</div>
+                    <div class="page-desc">Overview with statistics, performance charts, AI insights, and upcoming deadlines</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="my-courses.html" class="page-card">
+                    <span class="page-icon">📚</span>
+                    <div class="page-title">My Courses</div>
+                    <div class="page-desc">View enrolled courses with progress tracking and course statistics</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="my-assignments.html" class="page-card">
+                    <span class="page-icon">📝</span>
+                    <div class="page-title">Assignments</div>
+                    <div class="page-desc">View pending, submitted, and graded assignments with AI feedback</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="attendance.html" class="page-card">
+                    <span class="page-icon">📅</span>
+                    <div class="page-title">Attendance</div>
+                    <div class="page-desc">Track attendance records with calendar view and AI insights</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="grades.html" class="page-card">
+                    <span class="page-icon">🎓</span>
+                    <div class="page-title">Grades & GPA</div>
+                    <div class="page-desc">View current grades, GPA, completed courses, and grade analysis</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="recommendations.html" class="page-card">
+                    <span class="page-icon">🤖</span>
+                    <div class="page-title">AI Recommendations</div>
+                    <div class="page-desc">Personalized study tips, weak subject analysis, and course recommendations</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="my-progress.html" class="page-card">
+                    <span class="page-icon">📈</span>
+                    <div class="page-title">My Progress</div>
+                    <div class="page-desc">Track learning progress, achievements, badges, and statistics</div>
+                    <span class="badge auth">Student</span>
+                </a>
+
+                <a href="profile.html" class="page-card">
+                    <span class="page-icon">👤</span>
+                    <div class="page-title">My Profile</div>
+                    <div class="page-desc">Manage personal info, academic data, security settings, and preferences</div>
+                    <span class="badge auth">Student</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>👨‍💼 Admin Pages</h2>
+            <div class="pages-grid">
+                <a href="dashboard-admin.html" class="page-card">
+                    <span class="page-icon">⚙️</span>
+                    <div class="page-title">Admin Dashboard</div>
+                    <div class="page-desc">System management, analytics, AI monitoring, and comprehensive reports</div>
+                    <span class="badge admin">Admin</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 Quick Tips</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Start with <strong>index.html</strong> for the full experience</li>
+                <li>Try logging in at <strong>login.html</strong> (any credentials work)</li>
+                <li>Explore all dashboard pages after login</li>
+                <li>Test the search and filter functions on <strong>courses.html</strong></li>
+                <li>Check responsive design by resizing your browser window</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📄 Documentation Files</h2>
+            <div class="pages-grid">
+                <div class="page-card" style="cursor: default;">
+                    <span class="page-icon">📖</span>
+                    <div class="page-title">README.md</div>
+                    <div class="page-desc">Complete project documentation with features and setup instructions</div>
+                </div>
+
+                <div class="page-card" style="cursor: default;">
+                    <span class="page-icon">🚀</span>
+                    <div class="page-title">QUICK_START.md</div>
+                    <div class="page-desc">Quick start guide with step-by-step instructions</div>
+                </div>
+
+                <div class="page-card" style="cursor: default;">
+                    <span class="page-icon">🗺️</span>
+                    <div class="page-title">SITEMAP.txt</div>
+                    <div class="page-desc">Complete sitemap showing all pages and navigation flow</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Total Pages Created: 17 HTML Pages</strong></p>
+            <p>Complete educational platform with AI-powered features</p>
+            <p style="margin-top: 1rem; color: #667eea;">🎉 K+ Hackathon 2026 - Built with ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html" class="active">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Attendance Record</h1>
+                <p>Track your class attendance and participation</p>
+            </div>
+
+            <div class="attendance-summary">
+                <div class="attendance-stat">
+                    <h3>Overall Attendance</h3>
+                    <div class="circular-progress">
+                        <span class="percentage">92%</span>
+                    </div>
+                </div>
+                <div class="attendance-stat">
+                    <h3>Classes Attended</h3>
+                    <p class="stat-number">46/50</p>
+                </div>
+                <div class="attendance-stat">
+                    <h3>Excused Absences</h3>
+                    <p class="stat-number">2</p>
+                </div>
+                <div class="attendance-stat">
+                    <h3>Unexcused Absences</h3>
+                    <p class="stat-number">2</p>
+                </div>
+            </div>
+
+            <div class="attendance-by-course">
+                <h2>Attendance by Course</h2>
+                <div class="course-attendance-list">
+                    <div class="course-attendance-item">
+                        <div class="course-info">
+                            <h3>Introduction to Python Programming</h3>
+                            <p>CS-101 • Dr. Sarah Johnson</p>
+                        </div>
+                        <div class="attendance-progress">
+                            <div class="progress-details">
+                                <span>15/16 classes</span>
+                                <span class="attendance-percent good">94%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94%; background: #27ae60;"></div>
+                            </div>
+                        </div>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+
+                    <div class="course-attendance-item">
+                        <div class="course-info">
+                            <h3>Data Science Fundamentals</h3>
+                            <p>DS-201 • Prof. Michael Chen</p>
+                        </div>
+                        <div class="attendance-progress">
+                            <div class="progress-details">
+                                <span>14/16 classes</span>
+                                <span class="attendance-percent warning">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%; background: #f39c12;"></div>
+                            </div>
+                        </div>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+
+                    <div class="course-attendance-item">
+                        <div class="course-info">
+                            <h3>Web Development Bootcamp</h3>
+                            <p>WD-301 • Dr. Emily Rodriguez</p>
+                        </div>
+                        <div class="attendance-progress">
+                            <div class="progress-details">
+                                <span>17/18 classes</span>
+                                <span class="attendance-percent good">94%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94%; background: #27ae60;"></div>
+                            </div>
+                        </div>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attendance-calendar">
+                <h2>Attendance Calendar - August 2026</h2>
+                <div class="calendar-grid">
+                    <div class="calendar-day header">Sun</div>
+                    <div class="calendar-day header">Mon</div>
+                    <div class="calendar-day header">Tue</div>
+                    <div class="calendar-day header">Wed</div>
+                    <div class="calendar-day header">Thu</div>
+                    <div class="calendar-day header">Fri</div>
+                    <div class="calendar-day header">Sat</div>
+                    
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day present" title="Present">1</div>
+                    <div class="calendar-day present" title="Present">2</div>
+                    <div class="calendar-day">3</div>
+                    
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day present" title="Present">5</div>
+                    <div class="calendar-day present" title="Present">6</div>
+                    <div class="calendar-day absent" title="Absent">7</div>
+                    <div class="calendar-day present" title="Present">8</div>
+                    <div class="calendar-day present" title="Present">9</div>
+                    <div class="calendar-day">10</div>
+                    
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day present" title="Present">12</div>
+                    <div class="calendar-day present" title="Present">13</div>
+                    <div class="calendar-day present" title="Present">14</div>
+                    <div class="calendar-day present" title="Present">15</div>
+                    <div class="calendar-day today">16</div>
+                    <div class="calendar-day future">17</div>
+                </div>
+                <div class="calendar-legend">
+                    <span><span class="legend-box present"></span> Present</span>
+                    <span><span class="legend-box absent"></span> Absent</span>
+                    <span><span class="legend-box today"></span> Today</span>
+                </div>
+            </div>
+
+            <div class="ai-insights">
+                <h2>🤖 Attendance Insights</h2>
+                <div class="insight-card warning">
+                    <h3>Attention Required</h3>
+                    <p>Your attendance in Data Science has dropped to 88%. 
+                    Attending the remaining classes is crucial to meet the 90% minimum requirement.</p>
+                </div>
+                <div class="insight-card info">
+                    <h3>Recommendation</h3>
+                    <p>Students with 95%+ attendance tend to score 12% higher on average. 
+                    Consider attending all upcoming classes to maximize your performance.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function viewDetails(course) {
+            showNotification(`Loading detailed attendance for ${course}...`, 'info');
+        }
+    </script>
+</body>
+</html>

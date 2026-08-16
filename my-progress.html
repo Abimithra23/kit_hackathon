@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html" class="active">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>My Progress</h1>
+                <p>Track your learning journey and achievements</p>
+            </div>
+
+            <div class="progress-overview-cards">
+                <div class="overview-card">
+                    <h3>Courses Completed</h3>
+                    <p class="big-number">12</p>
+                    <p class="subtitle">of 16 total enrolled</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Study Hours</h3>
+                    <p class="big-number">156</p>
+                    <p class="subtitle">this semester</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Certificates Earned</h3>
+                    <p class="big-number">8</p>
+                    <p class="subtitle">downloadable</p>
+                </div>
+            </div>
+
+            <div class="progress-chart-section">
+                <h2>Overall Progress</h2>
+                <canvas id="overallProgressChart" width="800" height="400"></canvas>
+            </div>
+
+            <div class="course-progress-details">
+                <h2>Course-by-Course Progress</h2>
+                
+                <div class="course-progress-card">
+                    <div class="course-header">
+                        <h3>Introduction to Python Programming</h3>
+                        <span class="progress-percentage">75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <div class="progress-details-grid">
+                        <div class="detail">
+                            <span class="label">Modules Completed:</span>
+                            <span class="value">9/12</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Assignments Submitted:</span>
+                            <span class="value">15/20</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Quizzes Taken:</span>
+                            <span class="value">8/10</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Time Spent:</span>
+                            <span class="value">45 hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-progress-card">
+                    <div class="course-header">
+                        <h3>Data Science Fundamentals</h3>
+                        <span class="progress-percentage">60%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <div class="progress-details-grid">
+                        <div class="detail">
+                            <span class="label">Modules Completed:</span>
+                            <span class="value">6/10</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Assignments Submitted:</span>
+                            <span class="value">8/15</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Quizzes Taken:</span>
+                            <span class="value">5/8</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Time Spent:</span>
+                            <span class="value">38 hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-progress-card">
+                    <div class="course-header">
+                        <h3>Web Development Bootcamp</h3>
+                        <span class="progress-percentage">90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <div class="progress-details-grid">
+                        <div class="detail">
+                            <span class="label">Modules Completed:</span>
+                            <span class="value">13/14</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Assignments Submitted:</span>
+                            <span class="value">18/20</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Quizzes Taken:</span>
+                            <span class="value">9/10</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Time Spent:</span>
+                            <span class="value">73 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h2>🏆 Achievements & Badges</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-badge earned">
+                        <div class="badge-icon">🎓</div>
+                        <h4>First Course Complete</h4>
+                        <p>Earned: July 15, 2026</p>
+                    </div>
+                    <div class="achievement-badge earned">
+                        <div class="badge-icon">⭐</div>
+                        <h4>Perfect Attendance</h4>
+                        <p>Earned: July 30, 2026</p>
+                    </div>
+                    <div class="achievement-badge earned">
+                        <div class="badge-icon">🔥</div>
+                        <h4>7-Day Streak</h4>
+                        <p>Current streak: 12 days</p>
+                    </div>
+                    <div class="achievement-badge locked">
+                        <div class="badge-icon">🏅</div>
+                        <h4>Dean's List</h4>
+                        <p>Maintain 3.5+ GPA</p>
+                    </div>
+                    <div class="achievement-badge locked">
+                        <div class="badge-icon">💯</div>
+                        <h4>Perfect Score</h4>
+                        <p>Score 100% on any exam</p>
+                    </div>
+                    <div class="achievement-badge locked">
+                        <div class="badge-icon">👑</div>
+                        <h4>Top 10 Student</h4>
+                        <p>Rank in top 10 of class</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-statistics">
+                <h2>📈 Learning Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>Total Study Time</h4>
+                        <p class="stat-number">156 hours</p>
+                        <p class="stat-change positive">+12 hours from last month</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Average Session Length</h4>
+                        <p class="stat-number">2.5 hours</p>
+                        <p class="stat-change">Optimal range</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Completion Rate</h4>
+                        <p class="stat-number">92%</p>
+                        <p class="stat-change positive">Above average</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Quiz Average</h4>
+                        <p class="stat-number">87%</p>
+                        <p class="stat-change positive">+5% improvement</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Initialize progress chart
+        const ctx = document.getElementById('overallProgressChart')?.getContext('2d');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+                    datasets: [{
+                        label: 'Course Completion %',
+                        data: [10, 25, 40, 50, 60, 68, 75, 80],
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

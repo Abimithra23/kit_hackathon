@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html" class="active">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html" class="active">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>My Courses</h1>
+                <p>View and manage your enrolled courses</p>
+            </div>
+
+            <div class="courses-tabs">
+                <button class="tab-btn active" onclick="filterCourses('active')">Active Courses</button>
+                <button class="tab-btn" onclick="filterCourses('completed')">Completed</button>
+                <button class="tab-btn" onclick="filterCourses('all')">All Courses</button>
+            </div>
+
+            <div class="my-courses-grid">
+                <div class="my-course-card" data-status="active">
+                    <div class="course-header">
+                        <h3>Introduction to Python Programming</h3>
+                        <span class="badge active">In Progress</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-info">
+                            <span>Progress: 75%</span>
+                            <span>Due: Aug 30, 2026</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="label">Instructor:</span>
+                            <span class="value">Dr. Sarah Johnson</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Attendance:</span>
+                            <span class="value">92%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Grade:</span>
+                            <span class="value">A-</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="course-details.html" class="btn-primary">Continue Learning</a>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="my-course-card" data-status="active">
+                    <div class="course-header">
+                        <h3>Data Science Fundamentals</h3>
+                        <span class="badge active">In Progress</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-info">
+                            <span>Progress: 60%</span>
+                            <span>Due: Sep 15, 2026</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="label">Instructor:</span>
+                            <span class="value">Prof. Michael Chen</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Attendance:</span>
+                            <span class="value">88%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Grade:</span>
+                            <span class="value">B+</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="course-details.html" class="btn-primary">Continue Learning</a>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="my-course-card" data-status="active">
+                    <div class="course-header">
+                        <h3>Web Development Bootcamp</h3>
+                        <span class="badge active">In Progress</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-info">
+                            <span>Progress: 90%</span>
+                            <span>Due: Aug 22, 2026</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="label">Instructor:</span>
+                            <span class="value">Dr. Emily Rodriguez</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Attendance:</span>
+                            <span class="value">95%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Grade:</span>
+                            <span class="value">A</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="course-details.html" class="btn-primary">Continue Learning</a>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="my-course-card" data-status="completed">
+                    <div class="course-header">
+                        <h3>Introduction to HTML & CSS</h3>
+                        <span class="badge completed">Completed</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-info">
+                            <span>Progress: 100%</span>
+                            <span>Completed: July 15, 2026</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="label">Instructor:</span>
+                            <span class="value">Prof. David Lee</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Final Grade:</span>
+                            <span class="value">A+</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Certificate:</span>
+                            <span class="value">Available</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="#" class="btn-primary" onclick="showNotification('Certificate downloaded!', 'success'); return false;">Download Certificate</a>
+                        <a href="course-details.html" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterCourses(filter) {
+            const cards = document.querySelectorAll('.my-course-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = card.dataset.status === filter ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
