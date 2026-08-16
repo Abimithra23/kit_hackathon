@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard-student.html">Dashboard</a></li>
+                <li><a href="my-courses.html">My Courses</a></li>
+                <li><a href="my-assignments.html">Assignments</a></li>
+                <li><a href="my-progress.html">Progress</a></li>
+                <li class="dropdown">
+                    <a href="#" class="user-menu">John Doe ▾</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Dashboard Menu</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-student.html">📊 Overview</a></li>
+                <li><a href="my-courses.html">📚 My Courses</a></li>
+                <li><a href="my-assignments.html">📝 Assignments</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="grades.html" class="active">🎓 Grades</a></li>
+                <li><a href="recommendations.html">🤖 AI Recommendations</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>My Grades</h1>
+                <p>View your academic performance and grades</p>
+            </div>
+
+            <div class="gpa-summary">
+                <div class="gpa-card">
+                    <h2>Overall GPA</h2>
+                    <p class="gpa-value">3.8</p>
+                    <p class="gpa-scale">out of 4.0</p>
+                </div>
+                <div class="gpa-card">
+                    <h2>Current Semester</h2>
+                    <p class="gpa-value">3.9</p>
+                    <p class="gpa-scale">Fall 2026</p>
+                </div>
+                <div class="gpa-card">
+                    <h2>Credits Completed</h2>
+                    <p class="gpa-value">48</p>
+                    <p class="gpa-scale">out of 120</p>
+                </div>
+            </div>
+
+            <div class="grades-section">
+                <h2>Current Courses</h2>
+                <div class="grades-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Instructor</th>
+                                <th>Assignments</th>
+                                <th>Exams</th>
+                                <th>Participation</th>
+                                <th>Current Grade</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Introduction to Python</strong>
+                                    <br><small>CS-101</small>
+                                </td>
+                                <td>Dr. Sarah Johnson</td>
+                                <td>88%</td>
+                                <td>92%</td>
+                                <td>95%</td>
+                                <td><span class="grade grade-a">A-</span></td>
+                                <td><a href="course-details.html" class="btn-small">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Data Science Fundamentals</strong>
+                                    <br><small>DS-201</small>
+                                </td>
+                                <td>Prof. Michael Chen</td>
+                                <td>82%</td>
+                                <td>85%</td>
+                                <td>88%</td>
+                                <td><span class="grade grade-b">B+</span></td>
+                                <td><a href="course-details.html" class="btn-small">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Web Development Bootcamp</strong>
+                                    <br><small>WD-301</small>
+                                </td>
+                                <td>Dr. Emily Rodriguez</td>
+                                <td>95%</td>
+                                <td>93%</td>
+                                <td>98%</td>
+                                <td><span class="grade grade-a">A</span></td>
+                                <td><a href="course-details.html" class="btn-small">View Details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grades-section">
+                <h2>Completed Courses</h2>
+                <div class="grades-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Semester</th>
+                                <th>Credits</th>
+                                <th>Final Grade</th>
+                                <th>Grade Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Introduction to HTML & CSS</strong></td>
+                                <td>Spring 2026</td>
+                                <td>3</td>
+                                <td><span class="grade grade-a">A+</span></td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>JavaScript Basics</strong></td>
+                                <td>Spring 2026</td>
+                                <td>3</td>
+                                <td><span class="grade grade-a">A</span></td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Introduction to Databases</strong></td>
+                                <td>Spring 2026</td>
+                                <td>4</td>
+                                <td><span class="grade grade-b">B+</span></td>
+                                <td>3.3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grade-analysis">
+                <h2>📊 Grade Analysis</h2>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>Strongest Areas</h3>
+                        <ul>
+                            <li>Web Development (A average)</li>
+                            <li>Programming Assignments (92% average)</li>
+                            <li>Class Participation (95% average)</li>
+                        </ul>
+                    </div>
+                    <div class="analysis-card">
+                        <h3>Areas for Improvement</h3>
+                        <ul>
+                            <li>Data Science theory (82% on quizzes)</li>
+                            <li>Study time allocation</li>
+                            <li>Assignment early submission</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-insights">
+                <h2>🤖 AI Grade Insights</h2>
+                <div class="insight-card info">
+                    <h3>Performance Trend</h3>
+                    <p>Your grades have improved by 8% this semester compared to last. 
+                    Keep maintaining your study schedule!</p>
+                </div>
+                <div class="insight-card success">
+                    <h3>On Track for Dean's List</h3>
+                    <p>Maintain your current GPA of 3.8+ to qualify for the Dean's List this semester.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
