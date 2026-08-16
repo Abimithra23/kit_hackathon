@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - K+ Hackathon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">K+ Hackathon</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Explore Our Courses</h1>
+            <p>Find the perfect course to advance your career</p>
+        </div>
+    </section>
+
+    <section class="courses-section">
+        <div class="container">
+            <div class="filters-sidebar">
+                <h3>Filter Courses</h3>
+                <div class="filter-group">
+                    <h4>Categories</h4>
+                    <label><input type="checkbox" name="category" value="programming"> Programming</label>
+                    <label><input type="checkbox" name="category" value="data-science"> Data Science</label>
+                    <label><input type="checkbox" name="category" value="web-dev"> Web Development</label>
+                    <label><input type="checkbox" name="category" value="ai-ml"> AI & Machine Learning</label>
+                    <label><input type="checkbox" name="category" value="business"> Business</label>
+                </div>
+                <div class="filter-group">
+                    <h4>Level</h4>
+                    <label><input type="checkbox" name="level" value="beginner"> Beginner</label>
+                    <label><input type="checkbox" name="level" value="intermediate"> Intermediate</label>
+                    <label><input type="checkbox" name="level" value="advanced"> Advanced</label>
+                </div>
+                <div class="filter-group">
+                    <h4>Rating</h4>
+                    <label><input type="checkbox" name="rating" value="4.5"> 4.5+ Stars</label>
+                    <label><input type="checkbox" name="rating" value="4.0"> 4.0+ Stars</label>
+                    <label><input type="checkbox" name="rating" value="3.5"> 3.5+ Stars</label>
+                </div>
+                <button class="btn-primary" onclick="applyFilters()">Apply Filters</button>
+            </div>
+
+            <div class="courses-content">
+                <div class="search-bar">
+                    <input type="text" id="courseSearch" placeholder="Search courses..." onkeyup="searchCourses()">
+                    <button class="btn-secondary">Search</button>
+                </div>
+
+                <div class="sort-options">
+                    <label>Sort by:</label>
+                    <select id="sortBy" onchange="sortCourses()">
+                        <option value="popular">Most Popular</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest</option>
+                        <option value="title">Title (A-Z)</option>
+                    </select>
+                </div>
+
+                <div id="coursesList" class="courses-list">
+                    <div class="course-item" data-category="programming" data-level="beginner">
+                        <img src="https://via.placeholder.com/250x150" alt="Course">
+                        <div class="course-info">
+                            <h3>Introduction to Python Programming</h3>
+                            <p class="instructor">Dr. Sarah Johnson</p>
+                            <p class="description">Master Python from basics to advanced concepts with hands-on projects.</p>
+                            <div class="course-meta">
+                                <span class="rating">★★★★★ 4.9</span>
+                                <span class="students">2,345 students</span>
+                                <span class="duration">12 weeks</span>
+                            </div>
+                            <a href="course-details.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-category="data-science" data-level="intermediate">
+                        <img src="https://via.placeholder.com/250x150" alt="Course">
+                        <div class="course-info">
+                            <h3>Data Science Fundamentals</h3>
+                            <p class="instructor">Prof. Michael Chen</p>
+                            <p class="description">Learn data analysis, visualization, and statistical modeling techniques.</p>
+                            <div class="course-meta">
+                                <span class="rating">★★★★★ 4.8</span>
+                                <span class="students">1,823 students</span>
+                                <span class="duration">10 weeks</span>
+                            </div>
+                            <a href="course-details.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-category="web-dev" data-level="beginner">
+                        <img src="https://via.placeholder.com/250x150" alt="Course">
+                        <div class="course-info">
+                            <h3>Full Stack Web Development</h3>
+                            <p class="instructor">Dr. Emily Rodriguez</p>
+                            <p class="description">Build complete web applications using modern frameworks and tools.</p>
+                            <div class="course-meta">
+                                <span class="rating">★★★★☆ 4.7</span>
+                                <span class="students">3,012 students</span>
+                                <span class="duration">16 weeks</span>
+                            </div>
+                            <a href="course-details.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-category="ai-ml" data-level="advanced">
+                        <img src="https://via.placeholder.com/250x150" alt="Course">
+                        <div class="course-info">
+                            <h3>Machine Learning & AI</h3>
+                            <p class="instructor">Dr. James Wilson</p>
+                            <p class="description">Deep dive into machine learning algorithms and artificial intelligence.</p>
+                            <div class="course-meta">
+                                <span class="rating">★★★★★ 4.9</span>
+                                <span class="students">1,567 students</span>
+                                <span class="duration">14 weeks</span>
+                            </div>
+                            <a href="course-details.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-category="business" data-level="intermediate">
+                        <img src="https://via.placeholder.com/250x150" alt="Course">
+                        <div class="course-info">
+                            <h3>Digital Marketing Strategy</h3>
+                            <p class="instructor">Prof. Lisa Anderson</p>
+                            <p class="description">Master digital marketing techniques and grow your online presence.</p>
+                            <div class="course-meta">
+                                <span class="rating">★★★★☆ 4.6</span>
+                                <span class="students">2,890 students</span>
+                                <span class="duration">8 weeks</span>
+                            </div>
+                            <a href="course-details.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="course-item" data-category="programming" data-level="intermediate">
+                        <img src="https://via.placeholder.com/250x150" alt="Course">
+                        <div class="course-info">
+                            <h3>Advanced JavaScript</h3>
+                            <p class="instructor">Dr. Robert Taylor</p>
+                            <p class="description">Master advanced JavaScript concepts, patterns, and best practices.</p>
+                            <div class="course-meta">
+                                <span class="rating">★★★★★ 4.8</span>
+                                <span class="students">1,945 students</span>
+                                <span class="duration">10 weeks</span>
+                            </div>
+                            <a href="course-details.html" class="btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-rated-section">
+                    <h2>Top Rated Courses</h2>
+                    <div class="top-rated-list">
+                        <div class="top-rated-item">
+                            <span class="rank">#1</span>
+                            <span class="course-name">Introduction to Python Programming</span>
+                            <span class="rating">★★★★★ 4.9</span>
+                        </div>
+                        <div class="top-rated-item">
+                            <span class="rank">#2</span>
+                            <span class="course-name">Machine Learning & AI</span>
+                            <span class="rating">★★★★★ 4.9</span>
+                        </div>
+                        <div class="top-rated-item">
+                            <span class="rank">#3</span>
+                            <span class="course-name">Data Science Fundamentals</span>
+                            <span class="rating">★★★★★ 4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 K+ Hackathon Educational Platform. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="contact.html">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>
